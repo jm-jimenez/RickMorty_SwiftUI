@@ -6,44 +6,57 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct RickMortyDetailView: View {
 
-    let character: GetAllCharactersResponse.Character
-
-    @StateObject private var viewModel: RickMortyDetailViewModel
-
-    init(character: GetAllCharactersResponse.Character) {
-        self.character = character
-        _viewModel = .init(wrappedValue: RickMortyDetailViewModel(character: character))
-    }
+    let store: StoreOf<RickMortyDetailFeature>
     
     var body: some View {
         List {
-            HeaderView(character: character)
+            HeaderView(character: store.character)
 
             Section("info") {
-                ForEach(viewModel.infoViewModels) { viewModel in
+                ForEach(store.infoViewModels) { viewModel in
                     InfoRowView(viewModel: viewModel)
                 }
             }
 
-            if viewModel.episodes.count > 0 {
+            if store.episodes.count > 0 {
                 Section("Episodes") {
-                    ForEach(viewModel.episodes) { viewModel in
+                    ForEach(store.episodes) { viewModel in
                         EpisodeRowView(viewModel: viewModel)
                     }
                 }
             }
         }
         .task {
-            await viewModel.loadEpisodes()
+            store.send(.loadEpisodes)
         }
     }
 }
 
 struct RickMortyDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        RickMortyDetailView(character: GetAllCharactersResponse.Character.sample)
+        RickMortyDetailView(store: Store(initialState: RickMortyDetailFeature.State(character: GetAllCharactersResponse.Character.dummy())){
+            RickMortyDetailFeature()
+        })
+    }
+}
+
+private extension GetAllCharactersResponse.Character {
+    static func dummy() -> Self {
+        Self(id: 0,
+             name: "test",
+             status: "test",
+             species: "test",
+             type: "test",
+             gender: "test",
+             origin: Origin(name: "test", url: "test"),
+             location: Location(name: "test", url: "test"),
+             image: "test",
+             episode: ["test"],
+             url: "test",
+             created: "test")
     }
 }

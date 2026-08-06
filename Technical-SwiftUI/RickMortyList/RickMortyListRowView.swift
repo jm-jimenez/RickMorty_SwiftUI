@@ -40,7 +40,7 @@ struct RickMortyListRowView: View {
     }
 }
 
-struct RickMortyListRowViewModel: Identifiable {
+struct RickMortyListRowViewModel: Identifiable, Equatable {
     var id: Int
     let url: String
     let name: String
@@ -50,6 +50,17 @@ struct RickMortyListRowViewModel: Identifiable {
 
     static let sample = RickMortyListRowViewModel(id: 1, url: "https://rickandmortyapi.com/api/character/avatar/1.jpeg", name: "Rick Sanchez", episodes: 3, species: "Human", gender: "Male")
 
+}
+
+extension GetAllCharactersResponse.Character {
+    var viewModel: RickMortyListRowViewModel {
+        RickMortyListRowViewModel(id: id,
+                                  url: image,
+                                  name: name,
+                                  episodes: episode.count,
+                                  species: species,
+                                  gender: gender)
+    }
 }
 
 struct RickMortyListRowView_Previews: PreviewProvider {

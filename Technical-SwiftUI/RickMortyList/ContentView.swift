@@ -6,38 +6,40 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct ContentView: View {
-    @StateObject private var viewModel = RickMortyListViewModel()
-    @State private var searchText = ""
+    @Bindable var store: StoreOf<RickMortyListFeature>
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $store.scope(\.path, action: \.path)) {
             List {
-                ForEach(searchResults) { viewModel in
-                    NavigationLink {
-                        RickMortyDetailView(character: self.viewModel.getCharacterForViewModel(viewModel))
-                    } label: {
-                        RickMortyListRowView(viewModel: viewModel)
+                ForEach(searchResults) { character in
+                    NavigationLink(state: RickMortyDetailFeature.State(character: character)) {
+                        RickMortyListRowView(viewModel: character.viewModel)
                     }
                 }
             }
             .onAppear {
-                viewModel.loadCharacters()
+                store.send(.loadCharacters)
             }
             .navigationTitle("Characters")
             .navigationBarTitleDisplayMode(.inline)
+        } destination: { store in
+            RickMortyDetailView(store: store)
         }
-        .searchable(text: $searchText)
+        .searchable(text: $store.searchText.sending(\.setSearchTerm))
     }
 
-    var searchResults: [RickMortyListRowViewModel] {
-        searchText.isEmpty ? viewModel.viewModels : viewModel.viewModels.filter { $0.name.contains(searchText) }
+    var searchResults: [GetAllCharactersResponse.Character] {
+        store.searchText.isEmpty ? store.characters : store.characters.filter { $0.name.contains(store.searchText) }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(store: Store(initialState: RickMortyListFeature.State()) {
+            RickMortyListFeature()
+        })
     }
 }

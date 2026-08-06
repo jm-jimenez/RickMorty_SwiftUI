@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EpisodeRowViewModel: Identifiable {
+struct EpisodeRowViewModel: Identifiable, Equatable {
     let id = UUID()
     let name: String
     let episode: String

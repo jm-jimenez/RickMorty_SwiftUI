@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct Technical_SwiftUIApp: App {
+    static let store = Store(initialState: RickMortyListFeature.State()) {
+        RickMortyListFeature()
+    }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(store: Self.store)
         }
     }
 }

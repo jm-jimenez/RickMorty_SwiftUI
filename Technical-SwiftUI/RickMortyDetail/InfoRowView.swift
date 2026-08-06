@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct InfoRowViewModel: Identifiable {
+struct InfoRowViewModel: Identifiable, Equatable {
     let id = UUID()
     let key: String
     let value: String

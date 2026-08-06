@@ -12,16 +12,17 @@
 		1A5928B8298FC6A500BC6EA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A5928B7298FC6A500BC6EA0 /* Assets.xcassets */; };
 		1A5928BB298FC6A600BC6EA0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A5928BA298FC6A600BC6EA0 /* Preview Assets.xcassets */; };
 		1A5928C2298FC6E400BC6EA0 /* RickMortyListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5928C1298FC6E400BC6EA0 /* RickMortyListRowView.swift */; };
-		1A5928C5298FCA5000BC6EA0 /* RickMortyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5928C4298FCA5000BC6EA0 /* RickMortyListViewModel.swift */; };
 		1A5928C7298FCFD200BC6EA0 /* GetAllCharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5928C6298FCFD200BC6EA0 /* GetAllCharactersResponse.swift */; };
 		1A5928CA298FD32C00BC6EA0 /* RickMortyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5928C9298FD32C00BC6EA0 /* RickMortyDetailView.swift */; };
 		1A5928CC298FD57100BC6EA0 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5928CB298FD57100BC6EA0 /* NetworkClient.swift */; };
 		1A5928CE298FD8F900BC6EA0 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5928CD298FD8F900BC6EA0 /* HeaderView.swift */; };
-		1A5928D0298FDA3C00BC6EA0 /* RickMortyDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5928CF298FDA3C00BC6EA0 /* RickMortyDetailViewModel.swift */; };
 		1A5928D4298FF68600BC6EA0 /* GetEpisodesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5928D3298FF68600BC6EA0 /* GetEpisodesResponse.swift */; };
 		1A5928D6298FF9E200BC6EA0 /* InfoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5928D5298FF9E200BC6EA0 /* InfoRowView.swift */; };
 		1A5928D8298FFD4E00BC6EA0 /* EpisodeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5928D7298FFD4E00BC6EA0 /* EpisodeRowView.swift */; };
 		1A5928DA2990043000BC6EA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A5928D92990042F00BC6EA0 /* LaunchScreen.storyboard */; };
+		D261902930245ABB00B3F535 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = D261902830245ABB00B3F535 /* ComposableArchitecture */; };
+		D261902B30245AFE00B3F535 /* RickMortyListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D261902A30245AF500B3F535 /* RickMortyListFeature.swift */; };
+		D261902D30246DDA00B3F535 /* RickMortyDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D261902C30246DD400B3F535 /* RickMortyDetailFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,16 +32,16 @@
 		1A5928B7298FC6A500BC6EA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A5928BA298FC6A600BC6EA0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1A5928C1298FC6E400BC6EA0 /* RickMortyListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyListRowView.swift; sourceTree = "<group>"; };
-		1A5928C4298FCA5000BC6EA0 /* RickMortyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyListViewModel.swift; sourceTree = "<group>"; };
 		1A5928C6298FCFD200BC6EA0 /* GetAllCharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCharactersResponse.swift; sourceTree = "<group>"; };
 		1A5928C9298FD32C00BC6EA0 /* RickMortyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyDetailView.swift; sourceTree = "<group>"; };
 		1A5928CB298FD57100BC6EA0 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		1A5928CD298FD8F900BC6EA0 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		1A5928CF298FDA3C00BC6EA0 /* RickMortyDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyDetailViewModel.swift; sourceTree = "<group>"; };
 		1A5928D3298FF68600BC6EA0 /* GetEpisodesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEpisodesResponse.swift; sourceTree = "<group>"; };
 		1A5928D5298FF9E200BC6EA0 /* InfoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRowView.swift; sourceTree = "<group>"; };
 		1A5928D7298FFD4E00BC6EA0 /* EpisodeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRowView.swift; sourceTree = "<group>"; };
 		1A5928D92990042F00BC6EA0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D261902A30245AF500B3F535 /* RickMortyListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyListFeature.swift; sourceTree = "<group>"; };
+		D261902C30246DD400B3F535 /* RickMortyDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyDetailFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D261902930245ABB00B3F535 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +99,7 @@
 			children = (
 				1A5928B5298FC6A500BC6EA0 /* ContentView.swift */,
 				1A5928C1298FC6E400BC6EA0 /* RickMortyListRowView.swift */,
-				1A5928C4298FCA5000BC6EA0 /* RickMortyListViewModel.swift */,
+				D261902A30245AF500B3F535 /* RickMortyListFeature.swift */,
 				1A5928C6298FCFD200BC6EA0 /* GetAllCharactersResponse.swift */,
 			);
 			path = RickMortyList;
@@ -106,9 +108,9 @@
 		1A5928C8298FD31100BC6EA0 /* RickMortyDetail */ = {
 			isa = PBXGroup;
 			children = (
+				D261902C30246DD400B3F535 /* RickMortyDetailFeature.swift */,
 				1A5928C9298FD32C00BC6EA0 /* RickMortyDetailView.swift */,
 				1A5928CD298FD8F900BC6EA0 /* HeaderView.swift */,
-				1A5928CF298FDA3C00BC6EA0 /* RickMortyDetailViewModel.swift */,
 				1A5928D3298FF68600BC6EA0 /* GetEpisodesResponse.swift */,
 				1A5928D5298FF9E200BC6EA0 /* InfoRowView.swift */,
 				1A5928D7298FFD4E00BC6EA0 /* EpisodeRowView.swift */,
@@ -160,6 +162,9 @@
 				Base,
 			);
 			mainGroup = 1A5928A7298FC6A400BC6EA0;
+			packageReferences = (
+				D261902730245ABB00B3F535 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 1A5928B1298FC6A500BC6EA0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -187,7 +192,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A5928D0298FDA3C00BC6EA0 /* RickMortyDetailViewModel.swift in Sources */,
 				1A5928CA298FD32C00BC6EA0 /* RickMortyDetailView.swift in Sources */,
 				1A5928C2298FC6E400BC6EA0 /* RickMortyListRowView.swift in Sources */,
 				1A5928B6298FC6A500BC6EA0 /* ContentView.swift in Sources */,
@@ -195,7 +199,8 @@
 				1A5928CC298FD57100BC6EA0 /* NetworkClient.swift in Sources */,
 				1A5928C7298FCFD200BC6EA0 /* GetAllCharactersResponse.swift in Sources */,
 				1A5928D4298FF68600BC6EA0 /* GetEpisodesResponse.swift in Sources */,
-				1A5928C5298FCA5000BC6EA0 /* RickMortyListViewModel.swift in Sources */,
+				D261902B30245AFE00B3F535 /* RickMortyListFeature.swift in Sources */,
+				D261902D30246DDA00B3F535 /* RickMortyDetailFeature.swift in Sources */,
 				1A5928CE298FD8F900BC6EA0 /* HeaderView.swift in Sources */,
 				1A5928D6298FF9E200BC6EA0 /* InfoRowView.swift in Sources */,
 				1A5928D8298FFD4E00BC6EA0 /* EpisodeRowView.swift in Sources */,
@@ -328,7 +333,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Technical-SwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 85YP73WK35;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -337,12 +342,13 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "test.akkodis.Technical-SwiftUI";
+				PRODUCT_BUNDLE_IDENTIFIER = "Technical-SwiftUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -362,7 +368,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Technical-SwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 85YP73WK35;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -371,12 +377,13 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "test.akkodis.Technical-SwiftUI";
+				PRODUCT_BUNDLE_IDENTIFIER = "Technical-SwiftUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -409,6 +416,27 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D261902730245ABB00B3F535 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.26.1;
+			};
+			traits = (
+			);
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D261902830245ABB00B3F535 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D261902730245ABB00B3F535 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1A5928A8298FC6A400BC6EA0 /* Project object */;
 }

@@ -16,7 +16,7 @@ struct GetAllCharactersResponse: Decodable {
         let prev: String?
     }
 
-    struct Character: Decodable {
+    struct Character: Decodable, Equatable, Identifiable {
         let id: Int
         let name: String
         let status: String
@@ -30,12 +30,12 @@ struct GetAllCharactersResponse: Decodable {
         let url: String
         let created: String
 
-        struct Origin: Decodable {
+        struct Origin: Decodable, Equatable {
             let name: String
             let url: String
         }
 
-        struct Location: Decodable {
+        struct Location: Decodable, Equatable {
             let name: String
             let url: String
         }
