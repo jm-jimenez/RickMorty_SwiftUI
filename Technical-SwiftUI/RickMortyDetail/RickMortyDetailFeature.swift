@@ -11,6 +11,8 @@ import Foundation
 @Reducer
 struct RickMortyDetailFeature {
     
+    @Dependency(\.networkClient) var networkClient
+    
     @ObservableState
     struct State: Equatable {
         let character: GetAllCharactersResponse.Character
@@ -38,18 +40,20 @@ struct RickMortyDetailFeature {
             switch action {
             case .loadEpisodes:
                     return .run { [episodes = state.character.episode] send in
-                        let episodesMap = episodes.compactMap { $0.components(separatedBy: "/").last }
-                        let url = "https://rickandmortyapi.com/api/episode/" + episodesMap.joined(separator: ",")
-                        guard let url = URL(string: url) else { return }
-                        guard let (data, _) = try? await URLSession.shared.data(from: url) else { return }
-                        let result: [GetEpisodesResponse.Episode]
-                        switch episodes.count {
-                        case 1:
-                            result = handleSingleEpisode(data: data)
-                        default:
-                            result = handleMultipleEpisodes(data: data)
+                        
+                        let response = await networkClient.getEpisodes(episodes)
+                        switch response {
+                        case .success(let data):
+                            let result: [GetEpisodesResponse.Episode]
+                            switch episodes.count {
+                            case 1:
+                                result = handleSingleEpisode(data: data)
+                            default:
+                                result = handleMultipleEpisodes(data: data)
+                            }
+                            await send(.episodesLoaded(result.map(EpisodeRowViewModel.init)))
+                        case .failure: break
                         }
-                        await send(.episodesLoaded(result.map(EpisodeRowViewModel.init)))
                     }
             case .episodesLoaded(let episodes):
                 state.episodes = episodes

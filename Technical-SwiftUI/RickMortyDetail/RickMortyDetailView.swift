@@ -44,8 +44,8 @@ struct RickMortyDetailView_Previews: PreviewProvider {
     }
 }
 
-private extension GetAllCharactersResponse.Character {
-    static func dummy() -> Self {
+extension GetAllCharactersResponse.Character {
+    static func dummy(episode: [String] = ["test"]) -> Self {
         Self(id: 0,
              name: "test",
              status: "test",
@@ -55,7 +55,7 @@ private extension GetAllCharactersResponse.Character {
              origin: Origin(name: "test", url: "test"),
              location: Location(name: "test", url: "test"),
              image: "test",
-             episode: ["test"],
+             episode: episode,
              url: "test",
              created: "test")
     }

@@ -6,10 +6,12 @@
 //
 
 import ComposableArchitecture
-import Combine
 
 @Reducer
 struct RickMortyListFeature {
+    
+    @Dependency(\.networkClient) var networkClient
+    
     @ObservableState
     struct State: Equatable {
         var characters: [GetAllCharactersResponse.Character] = []
@@ -29,7 +31,6 @@ struct RickMortyListFeature {
             switch action {
             case .loadCharacters:
                 return .run { send in
-                    let networkClient = NetworkClient()
                     let result = await networkClient.getAllCharacters()
                     await send(.charactersLoaded(result))
                 }
